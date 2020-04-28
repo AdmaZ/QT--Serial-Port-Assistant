@@ -36,7 +36,20 @@ void Serial::systemInit()
     connect(&globlePort,&QSerialPort::readyRead,this,&Serial::ReciveDate);//串口打开就接收消息
     connect(ui->pushButton_2,&QPushButton::clicked,this,&Serial::ButtonClear);//清空文本框信号
     connect(ui->checkBox,&QCheckBox::stateChanged,this,&Serial::AutoClear);//自动清除
+
+    connect(&globlePort, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),  this, &Serial::handleSerialError);
     //connect(ui->checkBox_2,&QCheckBox::stateChanged,this,&Serial::ButtonClear);//16进制信号
+}
+void Serial::handleSerialError(QSerialPort::SerialPortError error)
+{
+    qDebug()<<"发生错误";
+    if (error == QSerialPort::ResourceError) {
+        //QMessageBox::critical(this, tr("Error"), "串口连接中断，请检查是否正确连接！");
+        //my_SerialPort->close();
+        //ui->label_status->setText("未连接");
+        //m_pTimer->start(1000);
+
+    }
 }
 void Serial::on_textBrowser_textChanged()
 {
@@ -115,7 +128,8 @@ void Serial::Timer1_Task()
     {
         for(int j = 0; j < ui->portBox->count();j++)
         {
-            if(ui->portBox->itemText(i) == globlePort.portName())
+            qDebug()<<"portname:"<<globlePort.portName();
+            if(ui->portBox->itemText(j) == globlePort.portName())
             {
                 z++;
             }
@@ -130,6 +144,7 @@ void Serial::Timer1_Task()
         z = 0;
     }
     */
+
 }
 /*----------------------------------------------------------
  *          COM自动识别
@@ -181,6 +196,7 @@ void Serial::Serial_Connect_Success_Label_Text()
         ui->portBox->clear();
         for (int i=0; i<staticList.size(); i++)
         {
+            if(staticList[i] != "")
             ui->portBox->addItem(staticList[i]); // 在comboBox那添加串口号
         }
     }
@@ -268,10 +284,21 @@ void Serial::ButtonOpenPort(bool)
             }
             //设置流控制模式
             globlePort.setFlowControl(QSerialPort::NoFlowControl);
-            //打开串口
+            //打开串口出现错误
             if(globlePort.open(QIODevice::ReadWrite)==false)
             {
-                //QMessageBox::warning(NULL , "提示", "串口打开失败！");
+                qDebug()<<"出现问题"<<ui->portBox->currentText();
+                for(int i = 0;i < ui->portBox->count() ;i++)
+                {
+                    if( ui->portBox->itemText(i) == ui->portBox->currentText())
+                    {
+                        ui->portBox->removeItem(i);
+                        staticList[i].remove(0,4);
+                    }
+
+                }
+
+                QMessageBox::warning(NULL , "提示", "串口打开失败！");
                 return;
             }
             // 失能串口设置控件

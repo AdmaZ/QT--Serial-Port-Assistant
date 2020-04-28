@@ -7,6 +7,7 @@
 #include <QTextCodec>
 #include <QTimer>
 #include <comlilerport.h>
+#include <QMessageBox>
 #include "serial.h"
 #include "ui_serial.h"
 #endif // INCLUDE_H

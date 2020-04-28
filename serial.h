@@ -26,6 +26,8 @@ public:
     CompilerPort compilerport;
     QStringList staticList ;
 
+    void handleSerialError(QSerialPort::SerialPortError error);
+
 private slots:   
 
     void Timer0_Task();//定时器任务
