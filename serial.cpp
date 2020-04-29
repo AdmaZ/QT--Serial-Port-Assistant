@@ -26,7 +26,6 @@ void Serial::systemInit()
     globlePort.setParity(QSerialPort::NoParity);
     globlePort.setDataBits(QSerialPort::Data8);
     globlePort.setStopBits(QSerialPort::OneStop);
-
     //端口设定
     ui->baudRateBox->setCurrentIndex(4);
     //信号绑定到槽

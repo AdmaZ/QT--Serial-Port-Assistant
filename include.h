@@ -9,5 +9,10 @@
 #include <comlilerport.h>
 #include <QMessageBox>
 #include "serial.h"
+
+#include <QPainter>
+#include <QBitmap>
+#include <QBrush>
+
 #include "ui_serial.h"
 #endif // INCLUDE_H

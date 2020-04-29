@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1020</width>
-    <height>655</height>
+    <width>1030</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1020</width>
-    <height>655</height>
+    <width>1030</width>
+    <height>650</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1020</width>
-    <height>655</height>
+    <width>1030</width>
+    <height>650</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -28,15 +28,51 @@
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+background-color: rgb(245, 245, 245);
+}
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>20</x>
+      <y>20</y>
       <width>341</width>
       <height>381</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox{
+background-color: rgb(240, 240, 240);
+
+border-width:2px;
+
+border-style:solid;
+
+border-radius: 10px;
+
+border-color:rgb(207, 207, 207);
+
+margin-top:0ex;
+
+}
+
+QGroupBox::title{
+
+subcontrol-origin:margin;
+
+subcontrol-position:top left;
+
+left:10px;
+
+margin-left:0px;
+
+padding:0 1px;
+
+}</string>
     </property>
     <property name="title">
      <string/>
@@ -56,6 +92,11 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox{background-color: rgb(225, 225, 225);border:2px groove gray;border-radius:4px;padding:2px 4px;border-style: outset;}
+                                       QComboBox:hover{background-color:rgb(229, 241, 251); color: black;}
+                                       QComboBox:pressed{background-color:rgb(204, 228, 247);border-style: inset;};</string>
+     </property>
     </widget>
     <widget class="QComboBox" name="baudRateBox">
      <property name="geometry">
@@ -71,6 +112,11 @@
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox{background-color: rgb(225, 225, 225);border:2px groove gray;border-radius:4px;padding:2px 4px;border-style: outset;}
+                                       QComboBox:hover{background-color:rgb(229, 241, 251); color: black;}
+                                       QComboBox:pressed{background-color:rgb(204, 228, 247);border-style: inset;};</string>
      </property>
      <item>
       <property name="text">
@@ -113,6 +159,11 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox{background-color: rgb(225, 225, 225);border:2px groove gray;border-radius:4px;padding:2px 4px;border-style: outset;}
+                                       QComboBox:hover{background-color:rgb(229, 241, 251); color: black;}
+                                       QComboBox:pressed{background-color:rgb(204, 228, 247);border-style: inset;};</string>
+     </property>
      <item>
       <property name="text">
        <string>None</string>
@@ -133,6 +184,11 @@
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox{background-color: rgb(225, 225, 225);border:2px groove gray;border-radius:4px;padding:2px 4px;border-style: outset;}
+                                       QComboBox:hover{background-color:rgb(229, 241, 251); color: black;}
+                                       QComboBox:pressed{background-color:rgb(204, 228, 247);border-style: inset;};</string>
      </property>
      <item>
       <property name="text">
@@ -170,6 +226,11 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox{border:2px groove gray;border-radius:4px;padding:2px 4px;background-color: rgb(225, 225, 225);}
+                                       QComboBox:hover{background-color:rgb(229, 241, 251); color: black;}
+                                       QComboBox:pressed{background-color:rgb(204, 228, 247);border-style: inset;}</string>
+     </property>
      <item>
       <property name="text">
        <string>1</string>
@@ -195,6 +256,11 @@
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{background-color: rgb(225, 225, 225);border:1px groove gray;border-radius:4px;padding:1px 4px;border-style: outset;}
+                                       QPushButton:hover{background-color:rgb(229, 241, 251); color: black;}
+                                       QPushButton:pressed{background-color:rgb(204, 228, 247);border-style: inset;}</string>
      </property>
      <property name="text">
       <string>打开串口</string>
@@ -274,6 +340,11 @@
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox{background-color: rgb(225, 225, 225);border:2px groove gray;border-radius:4px;padding:2px 4px;border-style: outset;}
+                                       QComboBox:hover{background-color:rgb(229, 241, 251); color: black;}
+                                       QComboBox:pressed{background-color:rgb(204, 228, 247);border-style: inset;};</string>
+     </property>
      <property name="text">
       <string/>
      </property>
@@ -282,11 +353,41 @@
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>410</y>
+      <x>20</x>
+      <y>420</y>
       <width>341</width>
       <height>211</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox{
+background-color: rgb(240, 240, 240);
+
+border-width:2px;
+
+border-style:solid;
+
+border-radius: 10px;
+
+border-color:rgb(207, 207, 207);
+
+margin-top:0ex;
+
+}
+
+QGroupBox::title{
+
+subcontrol-origin:margin;
+
+subcontrol-position:top left;
+
+left:10px;
+
+margin-left:0px;
+
+padding:0 1px;
+
+}</string>
     </property>
     <property name="title">
      <string/>
@@ -305,6 +406,11 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{background-color: rgb(225, 225, 225);border:1px groove gray;border-radius:4px;padding:8px 25px;border-style: outset;}
+                                       QPushButton:hover{background-color:rgb(229, 241, 251); color: black;}
+                                       QPushButton:pressed{background-color:rgb(204, 228, 247);border-style: inset;}</string>
      </property>
      <property name="text">
       <string>发送文本</string>
@@ -341,6 +447,11 @@
           <bold>false</bold>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{background-color: rgb(225, 225, 225);border:1px groove gray;border-radius:4px;padding:8px 15px;border-style: outset;}
+                                       QPushButton:hover{background-color:rgb(229, 241, 251); color: black;}
+                                       QPushButton:pressed{background-color:rgb(204, 228, 247);border-style: inset;}</string>
+        </property>
         <property name="text">
          <string>清空接收区</string>
         </property>
@@ -367,6 +478,11 @@
           <bold>false</bold>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{background-color: rgb(225, 225, 225);border:1px groove gray;border-radius:4px;padding:8px 25px;border-style: outset;}
+                                       QPushButton:hover{background-color:rgb(229, 241, 251); color: black;}
+                                       QPushButton:pressed{background-color:rgb(204, 228, 247);border-style: inset;}</string>
+        </property>
         <property name="text">
          <string>暂停显示</string>
         </property>
@@ -390,9 +506,9 @@
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>90</y>
-       <width>151</width>
+       <width>191</width>
        <height>91</height>
       </rect>
      </property>
@@ -429,45 +545,44 @@
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>10</y>
+      <x>380</x>
+      <y>20</y>
       <width>631</width>
-      <height>611</height>
+      <height>381</height>
      </rect>
     </property>
-    <property name="minimumSize">
-     <size>
-      <width>631</width>
-      <height>611</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>631</width>
-      <height>611</height>
-     </size>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox{
+background-color: rgb(255, 255, 255);
+
+border-width:2px;
+
+
+border-radius: 10px;
+
+border-color:rgb(221, 221, 221);
+
+margin-top: 0ex;
+
+}
+
+QGroupBox::title{
+
+subcontrol-origin:margin;
+
+subcontrol-position:top left;
+
+left:10px;
+
+margin-left:0px;
+
+padding:0 1px;
+
+}</string>
     </property>
     <property name="title">
      <string/>
     </property>
-    <widget class="QTextEdit" name="textEdit">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>400</y>
-       <width>631</width>
-       <height>211</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>10</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-    </widget>
     <widget class="QTextBrowser" name="textBrowser">
      <property name="geometry">
       <rect>
@@ -485,10 +600,83 @@
        <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid gray;/*设置边框的粗细，以及颜色*/
+border-radius: 10px;/*设置圆角的大小*/
+padding: 0 8px;/*如果没有内容光标在开始往后移动0.8像素点*/
+selection-background-color: darkgray;
+   </string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>420</y>
+      <width>631</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox{
+background-color: rgb(255, 255, 255);
+
+border-width:2px;
+
+
+border-radius: 10px;
+
+border-color:rgb(221, 221, 221);
+
+margin-top:0.5ex;
+
+}
+
+QGroupBox::title{
+
+subcontrol-origin:margin;
+
+subcontrol-position:top left;
+
+left:10px;
+
+margin-left:0px;
+
+padding:0 1px;
+
+}</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>631</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid gray;/*设置边框的粗细，以及颜色*/
+border-radius: 10px;/*设置圆角的大小*/
+padding: 0 8px;/*如果没有内容光标在开始往后移动0.8像素点*/
+selection-background-color: darkgray;
+   </string>
+     </property>
     </widget>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionhh">
    <property name="text">
     <string>第一</string>
